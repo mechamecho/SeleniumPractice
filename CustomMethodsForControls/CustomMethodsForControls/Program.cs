@@ -33,17 +33,24 @@ namespace CustomMethodsForControls
         //Executes the tests 
         public void ExecuteTest()
         {
-            //Title
-            SeleniumSetMethods.SelectDropDown("TitleId", "Ms.", PropertyType.Id);
+            //Initialize a page instance
+            EAPageObject page = new EAPageObject();
 
-            //Initial
-            SeleniumSetMethods.EnterText("Initial", "Nafissa", PropertyType.Name);
-            Console.WriteLine("The value from my Title is: "+SeleniumGetMethods.GetTextFromDDL( "TitleId", PropertyType.Id));
+            page.TxtInitial.SendKeys("ExecuteAutomation");
+            page.BtnSave.Click();
 
-            Console.WriteLine("The value from my Initial is: "+SeleniumGetMethods.GetText("Initial", PropertyType.Name));
 
-            //Click Save
-            SeleniumSetMethods.Click("Save", PropertyType.Name);
+            ////Title
+            //SeleniumSetMethods.SelectDropDown("TitleId", "Ms.", PropertyType.Id);
+
+            ////Initial
+            //SeleniumSetMethods.EnterText("Initial", "Nafissa", PropertyType.Name);
+            //Console.WriteLine("The value from my Title is: "+SeleniumGetMethods.GetTextFromDDL( "TitleId", PropertyType.Id));
+
+            //Console.WriteLine("The value from my Initial is: "+SeleniumGetMethods.GetText("Initial", PropertyType.Name));
+
+            ////Click Save
+            //SeleniumSetMethods.Click("Save", PropertyType.Name);
         }
 
         [Test]
