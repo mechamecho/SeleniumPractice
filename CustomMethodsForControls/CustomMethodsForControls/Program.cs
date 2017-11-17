@@ -33,33 +33,14 @@ namespace CustomMethodsForControls
         //Executes the tests 
         public void ExecuteTest()
         {
-            //Login to Application
+            //Initialize a LoginPageObject
             LoginPageObject pageLogin = new LoginPageObject();
-            EAPageObject pageEA = new EAPageObject();
 
 
 
-            pageLogin.Login("Nafissa", "Cool");
-
-
-            //Initialize a page instance
-            EAPageObject page = new EAPageObject();
-
-            //Fill the form out
-            pageEA.FillUserForm("NH", "Nafissa", "Hassan");
-
-
-            ////Title
-            //SeleniumSetMethods.SelectDropDown("TitleId", "Ms.", PropertyType.Id);
-
-            ////Initial
-            //SeleniumSetMethods.EnterText("Initial", "Nafissa", PropertyType.Name);
-            //Console.WriteLine("The value from my Title is: "+SeleniumGetMethods.GetTextFromDDL( "TitleId", PropertyType.Id));
-
-            //Console.WriteLine("The value from my Initial is: "+SeleniumGetMethods.GetText("Initial", PropertyType.Name));
-
-            ////Click Save
-            //SeleniumSetMethods.Click("Save", PropertyType.Name);
+            //Login, then fill the user form(PageLogin.Login returns a EAPageObject that we can use the FillUserForm method with
+            pageLogin.Login("Nafissa", "Cool").FillUserForm("NH", "Nafissa", "Hassan");
+            
         }
 
         [Test]
