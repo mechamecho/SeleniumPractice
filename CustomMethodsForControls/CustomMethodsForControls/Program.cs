@@ -25,7 +25,7 @@ namespace CustomMethodsForControls
             //Create reference for our browser
             PropertiesCollection.Driver = new ChromeDriver();
             //Navigate to Google page
-            PropertiesCollection.Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/index.html?UserName=&amp;Password=&amp;Login=Login");
+            PropertiesCollection.Driver.Navigate().GoToUrl("http://executeautomation.com/demosite/Login.html");
             Console.WriteLine("Opened URL");
         }
 
@@ -33,11 +33,20 @@ namespace CustomMethodsForControls
         //Executes the tests 
         public void ExecuteTest()
         {
+            //Login to Application
+            LoginPageObject pageLogin = new LoginPageObject();
+            EAPageObject pageEA = new EAPageObject();
+
+
+
+            pageLogin.Login("Nafissa", "Cool");
+
+
             //Initialize a page instance
             EAPageObject page = new EAPageObject();
 
-            page.TxtInitial.SendKeys("ExecuteAutomation");
-            page.BtnSave.Click();
+            //Fill the form out
+            pageEA.FillUserForm("NH", "Nafissa", "Hassan");
 
 
             ////Title

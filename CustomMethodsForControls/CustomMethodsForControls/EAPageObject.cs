@@ -24,7 +24,24 @@ namespace CustomMethodsForControls
         [FindsBy(How=How.Name, Using ="Initial")]
         public IWebElement TxtInitial { get; set; }
 
+        [FindsBy(How = How.Name, Using = "FirstName")]
+        public IWebElement TxtFirstName { get; set; }
+
+        [FindsBy(How = How.Name, Using = "MiddleName")]
+        public IWebElement TxtMiddleName { get; set; }
+
         [FindsBy(How = How.Name, Using = "Save")]
         public IWebElement BtnSave { get; set; }
+
+        public void FillUserForm(string initial, string firstName, string middleName)
+        {
+            TxtInitial.SendKeys(initial);
+            TxtFirstName.SendKeys(firstName);
+            TxtMiddleName.SendKeys(middleName);
+            BtnSave.Click();
+
+
+        }
+
     }
 }
