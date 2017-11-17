@@ -10,25 +10,14 @@ namespace CustomMethodsForControls
 {
     class SeleniumGetMethods
     {
-        public  static string GetText(string element, PropertyType elementtype)
+        public  static string GetText(IWebElement element)
         {
-            if (elementtype == PropertyType.Id) 
-                return PropertiesCollection.Driver.FindElement(By.Id(element)).GetAttribute("value");
-            if (elementtype == PropertyType.Name)
-                return PropertiesCollection.Driver.FindElement(By.Name(element)).GetAttribute("value");
-            else
-                return String.Empty;
+            return element.GetAttribute("value");
         }
 
-        public static string GetTextFromDDL(string element, PropertyType elementtype)
+        public static string GetTextFromDDL(IWebElement element)
         {
-            if (elementtype == PropertyType.Id)
-                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Id(element))).AllSelectedOptions.SingleOrDefault().Text;
-            if (elementtype == PropertyType.Name)
-                return new SelectElement(PropertiesCollection.Driver.FindElement(By.Name(element))).AllSelectedOptions.SingleOrDefault().Text;
-
-            else
-                return String.Empty;
+                return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text; ;
         }
     }
 }

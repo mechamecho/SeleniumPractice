@@ -27,10 +27,11 @@ namespace CustomMethodsForControls
         public EAPageObject Login(string UserName, string Password)
         {
             //UserName
-            TxtUserName.SendKeys(UserName);
+            //Extended Methods
+            TxtUserName.EnterText(UserName);
 
             //Password
-            TxtPassWord.SendKeys(Password);
+            TxtPassWord.EnterText(Password);
 
             //Click button
             BtnLogin.Submit();

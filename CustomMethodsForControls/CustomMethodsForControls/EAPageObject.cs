@@ -35,10 +35,12 @@ namespace CustomMethodsForControls
 
         public void FillUserForm(string initial, string firstName, string middleName)
         {
-            TxtInitial.SendKeys(initial);
-            TxtFirstName.SendKeys(firstName);
-            TxtMiddleName.SendKeys(middleName);
-            BtnSave.Click();
+            //The extended methods works directly on the IWebElement
+            TxtInitial.EnterText(initial);
+            TxtFirstName.EnterText(firstName);
+            TxtMiddleName.EnterText(middleName);
+            BtnSave.Clicks();
+
 
 
         }
