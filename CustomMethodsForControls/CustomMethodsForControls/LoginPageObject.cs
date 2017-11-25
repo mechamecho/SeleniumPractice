@@ -6,14 +6,22 @@ using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.PageObjects;
 
+
 namespace CustomMethodsForControls
 {
     class LoginPageObject
     {
+         
+
         public LoginPageObject()
         {
+
             PageFactory.InitElements(PropertiesCollection.Driver, this);
+            
+
         }
+
+
 
         [FindsBy(How=How.Name, Using ="UserName")]
         public IWebElement TxtUserName { get; set; }
@@ -26,12 +34,29 @@ namespace CustomMethodsForControls
 
         public EAPageObject Login(string UserName, string Password)
         {
+            DataEntry dataentry = new DataEntry();
             //UserName
             //Extended Methods
             TxtUserName.EnterText(UserName);
 
             //Password
             TxtPassWord.EnterText(Password);
+
+
+
+            //To get the username, we entered
+            string UsernameText = TxtUserName.GetText();
+
+
+
+            //To get the password we entered
+            string PasswordText=TxtPassWord.GetText();
+
+
+
+
+            dataentry.PopulateLoginTable(UsernameText, PasswordText);
+            
 
             //Click button
             BtnLogin.Submit();

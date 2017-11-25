@@ -8,16 +8,25 @@ using OpenQA.Selenium.Support.UI;
 
 namespace CustomMethodsForControls
 {
-    class SeleniumGetMethods
+    public static class SeleniumGetMethods
     {
-        public  static string GetText(IWebElement element)
+        public static bool IsChecked(this IWebElement element)
+        {
+            if (!String.IsNullOrEmpty(element.GetAttribute("value"))){
+                return true;
+            }
+
+            return false;
+        }
+
+        public  static string GetText(this IWebElement element)
         {
             return element.GetAttribute("value");
         }
 
-        public static string GetTextFromDDL(IWebElement element)
+        public static string GetTextFromDDL(this IWebElement element)
         {
-                return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text; ;
+                return new SelectElement(element).AllSelectedOptions.SingleOrDefault().Text; 
         }
     }
 }

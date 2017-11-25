@@ -8,16 +8,8 @@ using OpenQA.Selenium;
 namespace CustomMethodsForControls
 {
 
-    enum PropertyType
-    {
-        Id,
-        Name,
-        LinkText,
-        CssName,
-        ClassName
-    }
 
-    class PropertiesCollection
+    public static class PropertiesCollection
     {
 
 
