@@ -42,11 +42,11 @@ namespace CustomMethodsForControls
         [FindsBy(How = How.Name, Using = "Female")]
         public IWebElement GenderFemaleChoice { get; set; }
 
-        [FindsBy(How = How.Name, Using = "Female")]
+        [FindsBy(How = How.Name, Using = "english")]
         public IWebElement EnglishCheckbox { get; set; }
 
-        [FindsBy(How = How.Name, Using = "Female")]
-        public IWebElement HinduCheckbox { get; set; }
+        [FindsBy(How = How.Name, Using = "Hindi")]
+        public IWebElement HindiCheckbox { get; set; }
 
         //To select the title
         public void SelectTitle(string title)
@@ -67,6 +67,11 @@ namespace CustomMethodsForControls
         //To click the Gender RadioButton
         public void ClickGender(string gender)
         {
+            Console.WriteLine(GenderMaleChoice.IsChecked());
+            //to Uncheck the male option
+            GenderMaleChoice.Clicks();
+            Console.WriteLine(GenderMaleChoice.IsChecked());
+
             switch (gender.ToLower())
             {
                 case ("male"):
@@ -91,8 +96,8 @@ namespace CustomMethodsForControls
                         EnglishCheckbox.Clicks();
                         break;
 
-                    case ("hindu"):
-                        HinduCheckbox.Clicks();
+                    case ("hindi"):
+                        HindiCheckbox.Clicks();
                         break;
                 }
             }
@@ -134,9 +139,9 @@ namespace CustomMethodsForControls
             }
 
 
-            if (HinduCheckbox.IsChecked())
+            if (HindiCheckbox.IsChecked())
             {
-                languages[1] = "Hindu";
+                languages[1] = "Hindi";
 
             }
 

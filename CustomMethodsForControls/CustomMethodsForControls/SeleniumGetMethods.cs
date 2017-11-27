@@ -12,7 +12,7 @@ namespace CustomMethodsForControls
     {
         public static bool IsChecked(this IWebElement element)
         {
-            if (!String.IsNullOrEmpty(element.GetAttribute("value"))){
+            if (!String.IsNullOrEmpty(element.GetAttribute("checked"))){
                 return true;
             }
 

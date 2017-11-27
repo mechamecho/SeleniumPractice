@@ -33,7 +33,7 @@ namespace CustomMethodsForControls
         //Executes the tests 
         public void ExecuteTest()
         {
-            Console.WriteLine("Worls");
+            Console.WriteLine("Works");
             //Initialize a LoginPageObject
             LoginPageObject pageLogin = new LoginPageObject();
             Console.WriteLine("works");
@@ -42,7 +42,7 @@ namespace CustomMethodsForControls
             Console.WriteLine("Still works");
 
             //Login, then fill the user form(PageLogin.Login returns a EAPageObject that we can use the FillUserForm method with
-            pageLogin.Login("Nafissa", "Cool").FillUserForm("Ms.", "NH", "Nafissa", "Hassan", "Female", languages);
+            pageLogin.Login("Louie", "A little cool").FillUserForm("Ms.", "LC", "Nafissa", "Hassan", "Female", languages);
             
         }
 
