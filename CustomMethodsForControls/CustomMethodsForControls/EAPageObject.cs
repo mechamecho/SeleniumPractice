@@ -106,18 +106,26 @@ namespace CustomMethodsForControls
             ClickGender(gender);
             ClickLanguage(languages);
 
+            AddValuesToDatabase(languages);
+
+            SubmitForm();
+
+        }
+
+        public void AddValuesToDatabase(string[] languages)
+        {
             string TitleText = DDLTitleID.GetTextFromDDL();
             string Initial = TxtInitial.GetText();
             string Firstname = TxtFirstName.GetText();
             string Middlename = TxtMiddleName.GetText();
-            string Gender="Male";
+            string Gender = "Male";
             if (GenderMaleChoice.Selected)
             {
-                Gender=GenderMaleChoice.GetText();
+                Gender = GenderMaleChoice.GetText();
             }
             if (GenderFemaleChoice.Selected)
             {
-                 Gender = GenderFemaleChoice.GetText();
+                Gender = GenderFemaleChoice.GetText();
             }
 
             if (EnglishCheckbox.Selected)
@@ -138,13 +146,11 @@ namespace CustomMethodsForControls
 
 
             dataentry.PopulateUserFormTable(TitleText, Initial, Firstname, Middlename, Gender, languages);
+        }
 
+        private void SubmitForm()
+        {
             BtnSave.Clicks();
-
-
-
-
-
 
         }
 

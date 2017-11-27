@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 
 namespace CustomMethodsForControls
@@ -42,7 +37,7 @@ namespace CustomMethodsForControls
             Console.WriteLine("Still works");
 
             //Login, then fill the user form(PageLogin.Login returns a EAPageObject that we can use the FillUserForm method with
-            pageLogin.Login("Louis", "some password").FillUserForm("Mr.", "LC", "Louis", "Caballer", "mAlE", languages);
+            pageLogin.Login("Nafissa", "some password").FillUserForm("Ms.", "NH", "Nafissa", "Caballer", "female", languages);
             
         }
 
