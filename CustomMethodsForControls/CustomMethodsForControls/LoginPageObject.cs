@@ -34,9 +34,12 @@ namespace CustomMethodsForControls
 
         public EAPageObject Login(string UserName, string Password)
         {
+            //had console outputs here for debugginh
             DataEntry dataentry = new DataEntry();
+            //Here too
+
             //UserName
-            //Extended Methods
+            //Extension Methods
             TxtUserName.EnterText(UserName);
 
             //Password

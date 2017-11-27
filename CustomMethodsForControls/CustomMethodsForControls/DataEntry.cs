@@ -10,15 +10,15 @@ namespace CustomMethodsForControls
 
         }
 
-        SqlConnection connection;
+         SqlConnection connection;
         //string ConnectionString = ConfigurationManager.ConnectionStrings[@"CustomMethodsForControls.Properties.Settings.InputTestingConnectionString"].ConnectionString;
-        string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Engineer\Desktop\Prep2\Selenium Practice\CustomMethodsForControls\CustomMethodsForControls\InputTesting.mdf;Integrated Security=True";
+         string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Engineer\Desktop\Prep2\Selenium Practice\CustomMethodsForControls\CustomMethodsForControls\InputTesting.mdf;Integrated Security=True";
 
 
         public void PopulateLoginTable(string username, string password)
         {
             string query="INSERT INTO LoginInfo(Username, Password) VALUES (@Username, @Password)";
-            using (SqlConnection connection = new SqlConnection(ConnectionString))
+            using (connection = new SqlConnection(ConnectionString))
             using(SqlCommand command= new SqlCommand(query, connection))
             {
                 connection.Open();
