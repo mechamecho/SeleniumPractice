@@ -67,11 +67,6 @@ namespace CustomMethodsForControls
         //To click the Gender RadioButton
         public void ClickGender(string gender)
         {
-            Console.WriteLine(GenderMaleChoice.IsChecked());
-            //to Uncheck the male option
-            GenderMaleChoice.Clicks();
-            Console.WriteLine(GenderMaleChoice.IsChecked());
-
             switch (gender.ToLower())
             {
                 case ("male"):
@@ -88,20 +83,16 @@ namespace CustomMethodsForControls
         //To click the Languages checkboxes
         public void ClickLanguage(string[] languages)
         {
-            foreach (string language in languages)
+            //To uncheck the default English checkbox
+            if (!languages[0].ToLower().Equals("english"))
             {
-                switch (language.ToLower())
-                {
-                    case ("english"):
-                        EnglishCheckbox.Clicks();
-                        break;
-
-                    case ("hindi"):
-                        HindiCheckbox.Clicks();
-                        break;
-                }
+                EnglishCheckbox.Clicks();
             }
+                if(languages[1].ToLower().Equals("hindi"))
+                {
 
+                        HindiCheckbox.Clicks();
+                }
 
         }
 
@@ -120,16 +111,16 @@ namespace CustomMethodsForControls
             string Firstname = TxtFirstName.GetText();
             string Middlename = TxtMiddleName.GetText();
             string Gender="Male";
-            if (GenderMaleChoice.IsChecked())
+            if (GenderMaleChoice.Selected)
             {
                 Gender=GenderMaleChoice.GetText();
             }
-            if (GenderFemaleChoice.IsChecked())
+            if (GenderFemaleChoice.Selected)
             {
                  Gender = GenderFemaleChoice.GetText();
             }
 
-            if (EnglishCheckbox.IsChecked())
+            if (EnglishCheckbox.Selected)
             {
                 languages[0] = "English";
             }
@@ -139,7 +130,7 @@ namespace CustomMethodsForControls
             }
 
 
-            if (HindiCheckbox.IsChecked())
+            if (HindiCheckbox.Selected)
             {
                 languages[1] = "Hindi";
 

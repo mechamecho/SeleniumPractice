@@ -42,14 +42,8 @@ namespace CustomMethodsForControls
             Console.WriteLine("Still works");
 
             //Login, then fill the user form(PageLogin.Login returns a EAPageObject that we can use the FillUserForm method with
-            pageLogin.Login("Louie", "A little cool").FillUserForm("Ms.", "LC", "Nafissa", "Hassan", "Female", languages);
+            pageLogin.Login("Louis", "some password").FillUserForm("Mr.", "LC", "Louis", "Caballer", "mAlE", languages);
             
-        }
-
-        [Test]
-        public void NextTest()
-        {
-            Console.WriteLine("Next method");
         }
 
         [TearDown]

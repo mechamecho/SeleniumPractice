@@ -10,14 +10,7 @@ namespace CustomMethodsForControls
 {
     public static class SeleniumGetMethods
     {
-        public static bool IsChecked(this IWebElement element)
-        {
-            if (!String.IsNullOrEmpty(element.GetAttribute("checked"))){
-                return true;
-            }
 
-            return false;
-        }
 
         public  static string GetText(this IWebElement element)
         {
